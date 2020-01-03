@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package filedownloadmanager;
+option go_package="filedownloadmanager";
+
+service filedownloadmanager {
+    rpc getFile(filename) returns (file);
+}
+
+message filename{
+    string name = 1;
+}
+
+message file{
+    bytes content = 1;
+}
